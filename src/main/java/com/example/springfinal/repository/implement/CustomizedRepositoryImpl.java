@@ -10,9 +10,9 @@ public class CustomizedRepositoryImpl<T, ID> extends SimpleJpaRepository<T, ID> 
         CustomizedRepository<T, ID> {
     private EntityManager entityManager;
 
-    public CustomizedRepositoryImpl(JpaEntityInformation entityInformation, EntityManager entityManager, EntityManager entityManager1) {
+    public CustomizedRepositoryImpl(JpaEntityInformation entityInformation, EntityManager entityManager) {
         super(entityInformation, entityManager);
-        this.entityManager = entityManager1;
+        this.entityManager = entityManager;
     }
 
     @Override

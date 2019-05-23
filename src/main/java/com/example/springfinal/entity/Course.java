@@ -21,6 +21,6 @@ public class Course {
     选课关系的分解*/
     @ManyToOne(fetch = FetchType.LAZY)
     private User teacher;
-    @Column(columnDefinition = "TIME STAMP DEFAULT CURRENT_TIMESTAMP")
+    @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime insertTime;
 }

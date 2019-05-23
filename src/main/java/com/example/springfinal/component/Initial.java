@@ -2,20 +2,22 @@ package com.example.springfinal.component;
 
 import com.example.springfinal.entity.User;
 import com.example.springfinal.repository.UserRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
-
+@Slf4j
 @Component
 @Transactional
-public class InitialComponent  implements InitializingBean {
+public class Initial implements InitializingBean {
     @Autowired
     private PasswordEncoder pe;
     @Autowired
     private UserRepository ur;
+
     @Override
     public void afterPropertiesSet() throws Exception {
         if(ur.count()==0){

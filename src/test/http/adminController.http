@@ -1,0 +1,24 @@
+###
+POST http://localhost:8080/api/api/courses
+token:5454aa58defc2449878acef1245648731548ffeacd45fe25474848eacdf48ef25484eaefeacddf5
+Content-Type: application/json
+
+{
+  "name": "系统程序设计"
+}
+
+###
+POST http://localhost:8080/api/api/courses/1/homeworks
+token:5454aa58defc2449878acef1245648731548ffeacd45fe25474848eacdf48ef25484eaefeacddf5
+Content-Type: application/json
+
+{
+  "name": "实验",
+  "content": "课程设计",
+  "course": {
+    "id": 1
+  },
+  "deadLintTime": "2019-05-23 16:30"
+}
+
+###

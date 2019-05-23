@@ -26,7 +26,7 @@ public class User {
     private String password;
     //未声明时默认为1
     private int authority=1;
-    @Column(columnDefinition = "TIME STAMP DEFAULT CURRENT_TIMESTAMP",
+    @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP",
     updatable = false,
     insertable = false)
     private LocalDateTime insertTime;

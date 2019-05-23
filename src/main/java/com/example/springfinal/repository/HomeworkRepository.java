@@ -26,7 +26,7 @@ public interface HomeworkRepository extends CustomizedRepository<Homework, Integ
      * @return`
      */
     @Query("SELECT h FROM Homework h LEFT JOIN Elective e ON h.course.id=e.course.id " +
-            "WHERE h.course.id=:cid AND e.student.id=sid")
+            "WHERE h.course.id=:cid AND e.student.id=:sid")
     List<Homework> listByStudent(@Param("cid") int cid, @Param("sid") int sid);
 
 }
