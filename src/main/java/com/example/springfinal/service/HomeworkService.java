@@ -23,7 +23,7 @@ public class HomeworkService {
 
     //基于指定课程和教师查找所有家庭作业
     public List<Homework> listTeacherHomeworks(int cid, int tid) {
-        return hr.listByTeacher(cid, tid);
+        return hr.list(cid, tid);
     }
 
     //基于指定课程和学生查找所有课程作业

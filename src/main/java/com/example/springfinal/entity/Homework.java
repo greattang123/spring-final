@@ -18,7 +18,7 @@ public class Homework {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     //课程名称
-    private String name;
+    private String title;
     //课程作业详细内容
     @Column(columnDefinition = "TEXT")
     private String content;

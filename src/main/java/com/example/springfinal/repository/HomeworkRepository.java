@@ -17,7 +17,7 @@ public interface HomeworkRepository extends CustomizedRepository<Homework, Integ
      * @return
      */
     @Query("select h from Homework h where h.course.id=:cid and h.course.teacher.id=:tid")
-    List<Homework> listByTeacher(@Param("cid") int cid, @Param("tid") int tid);
+    List<Homework> list(@Param("cid") int cid, @Param("tid") int tid);
 
     /**
      * 基于学生学号和课程编号，查询该学生此门课程的所有家庭作业

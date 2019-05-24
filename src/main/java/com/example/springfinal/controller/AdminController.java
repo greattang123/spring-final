@@ -20,7 +20,7 @@ public class AdminController {
     // 教师请求添加课程，添加完成后将该教师的所有课程返回
 
     @PostMapping("/courses")
-    public Map postCourses(@RequestBody Course course, @RequestAttribute int uid){
+    public Map postCourse(@RequestBody Course course, @RequestAttribute int uid){
         course.setTeacher(new User(uid));
         cs.addCourse(course);
         return Map.of("courses", cs.listTeacherCourses(uid));
@@ -28,9 +28,9 @@ public class AdminController {
 
     //教师布置指定课程的家庭作业，后将家庭该家庭作业返回
     @PostMapping("/courses/{cid}/homeworks")
-    public Map postHoworks(@PathVariable int cid,@RequestAttribute int uid,
+    public Map postHomework(@PathVariable int cid,@RequestAttribute int uid,
                            @RequestBody Homework homework){
         hs.addHomework(homework);
-        return Map.of("homeworks",homework);
+        return Map.of("homeworks",hs.listTeacherHomeworks(cid, uid));
     }
 }

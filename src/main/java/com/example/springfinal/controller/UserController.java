@@ -33,7 +33,8 @@ public class UserController {
         List<Course> courses = null;
         if (aid == User.USER_AUTHORITY) {
             courses = cs.listStudentCourses(uid);
-        } else if (aid == User.ADMIN_AUTHORITY) {
+        }
+        if (aid == User.ADMIN_AUTHORITY) {
             courses = cs.listTeacherCourses(uid);
         }
         return Map.of("courses", courses);
@@ -46,7 +47,8 @@ public class UserController {
         Course course = null;
         if (aid == User.USER_AUTHORITY) {
             course = cs.getStudentCourse(cid, uid);
-        } else if (aid == User.ADMIN_AUTHORITY) {
+        }
+        if (aid == User.ADMIN_AUTHORITY) {
             course = cs.getTeacherCourse(cid, uid);
         }
         Optional.ofNullable(course)
@@ -55,7 +57,7 @@ public class UserController {
     }
 
     //根据课程查找其全部家庭作业
-    @GetMapping("/courses/{cid}homeworks")
+    @GetMapping("/courses/{cid}/homeworks")
     public Map getHomeworks(@PathVariable int cid, @RequestAttribute int uid, @RequestAttribute int aid) {
         List<Homework> homeworks = null;
         if (aid == User.USER_AUTHORITY) {
